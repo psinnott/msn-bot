@@ -1,0 +1,9 @@
+Simple class for writing msn bots using pymsn
+
+The basic bot includes subscribe/unsubscribe support. 
+Currently the subscription list is held in memory.
+
+
+To write a bot extend MsnBot.Bot by providing a process method.
+Your process method can call send_text_message to reply to the user who sent you a message or broadcast to send a message to all subscribed users.
+See MyMsnBot.py for an example bot.
