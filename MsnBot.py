@@ -35,6 +35,11 @@ class Bot(pymsn.Client):
 	        mainloop.run()
 
 
+	def send_text_message(self,contact,message):
+
+		pymsn.Conversation( self , [contact] ).send_text_message(pymsn.ConversationMessage(message))
+
+
 	def broadcast(self,message):
 		
 		for i in self._subscribers:
@@ -113,5 +118,5 @@ if __name__ == "__main__":
 	logging.basicConfig( level = logging.INFO )
 
 	bot = Bot(( "messenger.hotmail.com" , 1863 ))
-	bot.login( ( username , password) , name )
+	bot.login( (username,password) , name )
 	bot.run()
